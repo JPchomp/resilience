@@ -1,0 +1,114 @@
+For each origin desitnation, we have a commodity.
+
+path-arc matrix
+i vs (j,l)
+[]
+
+i in P Set of paths FOR COMMODITY k
+
+(j,l) in A set of Arcs
+
+
+
+Cost of a path = For path i , for commodity k, the sum of all costs for that path
+
+=sum of dij costs ij
+
+
+
+that times flow for path i
+This is the new objective. Decision variables : f(P) Flows. Multiplying factor: Cost
+
+How do we price the paths?
+
+
+
+Subject to capacity. Demand. Flow >0
+
+There is one constraint for each arc, in the chosen paths?
+and one demand constraint for each origin destination
+
+		Add The SP from a to b.					%OBS: If the problem is uncapacitated the computational time is same as a shortest path!!
+
+		Obtain the cost for that path. [1,]			(Depends on the number of origins destinations, commodities)
+
+that is my first column. (or columns)
+
+Solve with that. Get duals
+
+Get C' network (everywhere) Find SP from each destination, to each origin, for every commodity.
+
+Add those to the column space.
+
+General .m
+Import node data and all
+Write the graph.
+Initialize my matrix of eros expeted.
+
+Call fun3 (nodes of interest, commodities, origins, destins.)
+	returns me the solution 
+
+
+Explicit which nodes i care about connectivity.
+Define the actual origins and destinations. (An array of the ones i want to consider!)
+
+def fun 1: getsp() 
+Give me the shortet path of a network, the cost. (distance)
+
+def fun 2: Write Subproblem costs:
+grabs all shadow prices and build the SubProblem Network
+
+def fun 3: Master problem call: (set of nodes, commodities, origins, destinations)
+getsp() of each.
+
+def fun 4: Write the Master Problem
+For each k-pair of nodes, 
+	fun 1  - > store them in []
+	this is my first basis.
+	
+	Price every path! 
+	for each of the k pairs in []
+
+reduced costs are all = [1]
+while the min reduced cost < 0
+
+		fun 6()
+		Solve the min cost flow for the proposed basis: fun 7
+		get the duals : produce reduced costs:
+		fun 2 (write the subproblem) -> fun 1 -> Getsp
+
+If SP<0 -> this is the new path to be included.
+
+end while
+
+Qe quiero que escriba: Me puede interesar la solucion que encontro?
+% fun 8: store the solution?: Link and traffic pero link. Possibility to store a couple.
+%
+Seguro quiero el cost. 
+
+Eso lo divido por el trafico del problema.
+fun9: 
+Store results in a matrix.
+
+Sobre esta matrix eventualmente sacale mean or whatever
+
+
+	
+def fun 5: permutations
+	Writes all the possible combinations of nodes. 
+
+
+def fun 6: Price a path
+	For a path, add all the cij. (probably laready get them in SP)
+
+def fun 7: Solve Master Problem
+	Solve mincostflow in cplex? Throws duals too
+
+def fun 8: 
+	what is the traffic, of what type, for each link.
+
+def fun 9:
+	write results on the zeros matrix.
+
+def fun 10:
+	return the average of all rows or whatever after dividing by T

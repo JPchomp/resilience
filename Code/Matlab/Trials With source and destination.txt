@@ -1,0 +1,23 @@
+Beq(Beq~=0)=0;
+Beq(104)=3200;
+Beq(108)=-3200;
+[x,GSP]=linprog(f,A,B,Aeq,Beq.',zeros(1,length(f)),repmat(max(max(capmatrix)),1,length(f)),options);
+max(x)
+x(x~=0)
+min(x)
+GSP
+GSP/3200
+
+Works
+
+Beq(Beq~=0)=0;
+Beq(104)=-3200;
+Beq(108)=3200;
+[x,GSP]=linprog(f,[],[],Aeq,Beq.',zeros(1,length(f)),repmat(max(max(capmatrix)),1,length(f)),options);
+max(x)
+x(x~=0)
+min(x)
+GSP
+GSP/3200
+
+works too but does not give costs. Have to update f. also A and cap matrix to reflect bidirectionality

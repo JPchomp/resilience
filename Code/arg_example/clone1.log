@@ -1,0 +1,26 @@
+
+Log for 'mincostflow' Clone_1 (V12.8.0.0) Wed Jun 24 23:53:47 2020
+
+Presolve time = 0.02 sec. (9.69 ticks)
+
+Dual simplex solved model.
+
+
+Log for 'mincostflow' Clone_1 (V12.8.0.0) Thu Jun 25 12:11:12 2020
+
+Tried aggregator 0 times.
+Presolve time = 0.00 sec. (2.39 ticks)
+Barrier time = 0.02 sec. (2.54 ticks)
+
+Dual simplex solved model.
+
+
+Log for 'mincostflow' Clone_1 (V12.8.0.0) Tue Jul  7 13:36:55 2020
+
+Tried aggregator 0 times.
+Presolve time = 0.00 sec. (2.39 ticks)
+Parallel mode: using up to 3 threads for barrier.
+Barrier time = 0.02 sec. (3.25 ticks)
+
+Dual simplex solved model.
+
