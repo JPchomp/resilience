@@ -1,4 +1,4 @@
-# Practical metrics for network infrastructure reliability
+# Practical metrics for network infrastructure resilience
 
 The objective of civil infrastructure design is to provide the best service possible within execution constraints, for a given lifetime service. During this lifetime exceptional events occur which stress the working limits beyond regular performance and may even collapse functionality completely. 
 
